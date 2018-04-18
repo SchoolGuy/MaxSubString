@@ -18,17 +18,18 @@ public class MaxSubString {
     /**
      * Recursive solution for the problem of finding the longest substring of two given strings.
      *
-     * @author Enno Gotthold
-     * @param z1 The longer of the two given strings.
-     * @param z2 The shorter of the two given strings.
-     * @param i Start-Index for splitting the string.
+     * @param z1     The longer of the two given strings.
+     * @param z2     The shorter of the two given strings.
+     * @param i      Start-Index for splitting the string.
      * @param length This parameter contains the current length of the substring.
      * @param result This parameter contains the current longest string which is contained in both strings. If there are multiple longest strings it contains the first one.
      * @return The final result of the recursive algorithm.
+     * @author Enno Gotthold
      */
     private String MaxSubStringRecursive(String z1, String z2, int i, int length, String result) {
         String substring;
         int j = i + length;
+
         if (length >= z2.length() && z1.contains(z2)) {
             return z2;
         } else if (length == z2.length()) {
@@ -36,7 +37,6 @@ public class MaxSubString {
         } else if (length > z2.length()) {
             return result;
         } else {
-
             substring = z2.substring(i, j);
         }
 
@@ -54,10 +54,10 @@ public class MaxSubString {
     /**
      * Iterative solution for the problem of finding the longest substring of two given strings.
      *
-     * @author Enno Gotthold
      * @param z1 The longer of the two given strings.
      * @param z2 The shorter of the two given strings.
      * @return The longest possible substrings which is contained in both strings z1 & z2.
+     * @author Enno Gotthold
      */
     public String MaxSubStringIterative(String z1, String z2) {
         //Init for Variables
@@ -96,9 +96,9 @@ public class MaxSubString {
     /**
      * This method generates every possible combination of strings which are a subset of the given string.
      *
-     * @author Enno Gotthold
      * @param s The String that the combinations should be generated for.
      * @return The List with all possible combinations.
+     * @author Enno Gotthold
      */
     private List<String> GeneratePosibilitys(String s) {
         List<String> resultList = new ArrayList<String>();
